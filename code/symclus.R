@@ -76,10 +76,9 @@ hclustSO <- function(SD,dSel){
     ik <- nUnits + k
     for(j in 1:nSel) U[[j]][[ik]] <- updateL(j,ip,iq)
     active <- setdiff(active,p)
-    ipq <- ik
     for(s in setdiff(active,q)){
       is <- ifelse(node[s]==0,s,node[s])
-      D[s,q] <- D[q,s] <- distSO(U,ipq,is)
+      D[s,q] <- D[q,s] <- distSO(U,ik,is)
     }
     node[[q]] <- ik
   }
