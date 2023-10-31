@@ -27,7 +27,7 @@ distSO <- function(U,p,q){
   return(dis)
 }
 
-updateL <- function(j,ip,iq){
+updateL <- function(U,j,ip,iq){
   dt <- dSel[[j]]$dType; Y <- U[[j]]
   if(dt == "membersR"){
     P <- Y[[ip]]$R; Q <- Y[[iq]]$R
@@ -74,7 +74,7 @@ hclustSO <- function(SD,dSel){
     if(node[q]==0){m[k,2] <- -q; iq <- q
     } else {m[k,2] <- node[q]; iq <- node[q]}
     ik <- nUnits + k
-    for(j in 1:nSel) U[[j]][[ik]] <- updateL(j,ip,iq)
+    for(j in 1:nSel) U[[j]][[ik]] <- updateL(U,j,ip,iq)
     active <- setdiff(active,p)
     for(s in setdiff(active,q)){
       is <- ifelse(node[s]==0,s,node[s])
