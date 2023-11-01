@@ -2,6 +2,8 @@
 # 30. October 2023
 # Vladimir Batagelj
 
+dSkip <- function(Y,p,q){return(0)}
+
 dMembers <- function(Y,p,q){
   P <- Y[[p]]$R; Q <- Y[[q]]$R
   R <- P+Q; M <- max(R); t <- as.integer(2*R >= M)
@@ -29,7 +31,9 @@ distSO <- function(U,p,q){
 
 updateL <- function(U,dSel,j,ip,iq){
   dt <- dSel[[j]]$dType; Y <- U[[j]]
-  if(dt == "membersR"){
+  if(dt == "skip"){
+    return(list(L="",R="",s=0))
+  } else if(dt == "membersR"){
     P <- Y[[ip]]$R; Q <- Y[[iq]]$R
     R <- P+Q; M <- max(R); t <- as.integer(2*R >= M)
     s <- Y[[ip]]$s + Y[[iq]]$s
@@ -43,7 +47,7 @@ updateL <- function(U,dSel,j,ip,iq){
   } else cat(j,ip,iq, "Error\n")
 }
 
-hclustSO <- function(SD,dSel){
+hclustSO <- function(SD){
   orDendro <- function(i){if(i<0) return(-i)
     return(c(orDendro(m[i,1]),orDendro(m[i,2])))}
 
