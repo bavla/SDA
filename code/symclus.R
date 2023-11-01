@@ -47,15 +47,15 @@ updateL <- function(U,dSel,j,ip,iq){
   } else cat(j,ip,iq, "Error\n")
 }
 
-hclustSO <- function(SD){
+hclustSO <- function(SD,dSel){
   orDendro <- function(i){if(i<0) return(-i)
     return(c(orDendro(m[i,1]),orDendro(m[i,2])))}
 
   nUnits <- SD$head$nUnits; nmUnits <- nUnits-1; nSel <- length(dSel)
   npUnits <- nUnits+1; n2mUnits <- nUnits+nmUnits
   w <- rep(1,nUnits)
-  alpha <- vars <- rep(NA,nSel)
-  for(i in 1:nSel) {X <- dSel[[i]]; vars[i] <- X$var; alpha[i] <- X$alpha }
+  alpha <<- vars <- rep(NA,nSel)
+  for(i in 1:nSel) {X <- dSel[[i]]; vars[i] <- X$var; alpha[i] <<- X$alpha }
   H <- SD$SDF[,vars]; U <- H
   for(i in 1:nSel) for(j in 1:nUnits) U[[i]][[j]] <- list(L=H[[i]][[j]],R=H[[i]][[j]],s=1)
   D <- matrix(nrow=nUnits,ncol=nUnits)
@@ -66,7 +66,7 @@ hclustSO <- function(SD){
   active <- 1:nUnits; m <- matrix(nrow=nmUnits,ncol=2)
   node <- rep(0,nUnits); h <- numeric(nmUnits)
   for(j in npUnits:n2mUnits) { U[nrow(U)+1,] <- vector("list",nSel)
-       for(i in 1:nSel) U[[i]][[j]] <- list(L=NA,R=NA,s=NA)}
+    for(i in 1:nSel) U[[i]][[j]] <- list(L=NA,R=NA,s=NA)}
   rownames(U)[npUnits:n2mUnits] <- paste("L",1:nmUnits,sep="")
   for(k in 1:nmUnits){
     ind <- active[sapply(active,function(i) which.min(D[i,active]))]
