@@ -5,17 +5,16 @@
 dSkip <- function(Y,p,q){return(0)}
 
 dMembers <- function(Y,p,q){
-  P <- Y[[p]]$R; Q <- Y[[q]]$R
+  P <- Y[[p]]$R; Q <- Y[[q]]$R; pp <- Y[[p]]$p; pq <- Y[[q]]$p
   R <- P+Q; M <- max(R); t <- as.integer(2*R >= M)
-  return(sum((1-t)*R + t*(M-R)))
+  ppq <- sum((1-t)*R + t*(M-R))
+  return(ppq - pp - pq)
 }
-
 dIntSq <- function(Y,p,q){
   P <- Y[[p]]$L; Q <- Y[[q]]$L
   wp <- Y[[p]]$s; wq <- Y[[q]]$s
   return(wp*wq*sum((P-Q)**2)/(wp+wq))
 }
-
 # computes dissimilarity between SOs
 # global: alpha, dSel, nSel
 distSO <- function(U,p,q){  
@@ -31,13 +30,13 @@ distSO <- function(U,p,q){
 
 updateL <- function(U,dSel,j,ip,iq){
   dt <- dSel[[j]]$dType; Y <- U[[j]]
-  if(dt == "skip"){
-    return(list(L="",R="",s=0))
-  } else if(dt == "membersR"){
+  pp <- Y[[ip]]$p; pq <- Y[[iq]]$p
+  if(dt == "membersR"){
     P <- Y[[ip]]$R; Q <- Y[[iq]]$R
     R <- P+Q; M <- max(R); t <- as.integer(2*R >= M)
     s <- Y[[ip]]$s + Y[[iq]]$s
-    return(list(L=t,R=R,s=Y[[ip]]$s+Y[[iq]]$s))
+    ppq <- sum((1-t)*R + t*(M-R))
+    return(list(L=t,R=R,s=Y[[ip]]$s+Y[[iq]]$s,p=ppq))
   } else if(dt == "intervalSq"){
     P <- Y[[ip]]$L; Q <- Y[[iq]]$L
     Pr <- Y[[ip]]$R; Qr <- Y[[iq]]$R
@@ -46,6 +45,7 @@ updateL <- function(U,dSel,j,ip,iq){
     return(list(L=t,R=R,s=wp+wq))
   } else cat(j,ip,iq, "Error\n")
 }
+
 
 hclustSO <- function(SD,dSel){
   orDendro <- function(i){if(i<0) return(-i)
@@ -57,7 +57,7 @@ hclustSO <- function(SD,dSel){
   alpha <<- vars <- rep(NA,nSel)
   for(i in 1:nSel) {X <- dSel[[i]]; vars[i] <- X$var; alpha[i] <<- X$alpha }
   H <- SD$SDF[,vars]; U <- H
-  for(i in 1:nSel) for(j in 1:nUnits) U[[i]][[j]] <- list(L=H[[i]][[j]],R=H[[i]][[j]],s=1)
+  for(i in 1:nSel) for(j in 1:nUnits) U[[i]][[j]] <- list(L=H[[i]][[j]],R=H[[i]][[j]],s=1,p=0)
   D <- matrix(nrow=nUnits,ncol=nUnits)
   for(p in 1:nmUnits) for(q in (p+1):nUnits) { 
     D[q,p] <- D[p,q] <- distSO(U,p,q)
@@ -66,7 +66,7 @@ hclustSO <- function(SD,dSel){
   active <- 1:nUnits; m <- matrix(nrow=nmUnits,ncol=2)
   node <- rep(0,nUnits); h <- numeric(nmUnits)
   for(j in npUnits:n2mUnits) { U[nrow(U)+1,] <- vector("list",nSel)
-    for(i in 1:nSel) U[[i]][[j]] <- list(L=NA,R=NA,s=NA)}
+    for(i in 1:nSel) U[[i]][[j]] <- list(L=NA,R=NA,s=1,p=0)}
   rownames(U)[npUnits:n2mUnits] <- paste("L",1:nmUnits,sep="")
   for(k in 1:nmUnits){
     ind <- active[sapply(active,function(i) which.min(D[i,active]))]
