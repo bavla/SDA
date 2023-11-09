@@ -10,11 +10,19 @@ dMembers <- function(Y,p,q){
   ppq <- sum((1-t)*R + t*(M-R))
   return(ppq - pp - pq)
 }
+
+pMembers <- function(Y,p,q){
+  P <- Y[[p]]$R; Q <- Y[[q]]$R; pp <- Y[[p]]$p; pq <- Y[[q]]$p
+  R <- P+Q; M <- max(R); t <- as.integer(2*R >= M)
+  return(sum((1-t)*R + t*(M-R)))
+}
+
 dIntSq <- function(Y,p,q){
   P <- Y[[p]]$L; Q <- Y[[q]]$L
   wp <- Y[[p]]$s; wq <- Y[[q]]$s
   return(wp*wq*sum((P-Q)**2)/(wp+wq))
 }
+
 # computes dissimilarity between SOs
 # global: alpha, dSel, nSel
 distSO <- function(U,p,q){  
