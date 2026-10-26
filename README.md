@@ -8,7 +8,7 @@ Symbolic data analysis
   * [9th Symbolic Data Analysis Workshop SDA 2023](https://sda2018.wixsite.com/sda2023paris), 2-4 November 2023, CNAM, Paris. Facebook [pics1](https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fvladimir.batagelj%2Fposts%2Fpfbid021BMrhW55eFnKRje8jNSB4Ysvur6g2DVwZKS7YD22z7CVnqrSQd7Vw3RyMyJJagfYl&show_text=true&width=500), [pics2](https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fvladimir.batagelj%2Fposts%2Fpfbid02nC8v2UmKFJPKR5VqoeQiVHdinLRb7TSfNZ81p9ELEgvRiSQbhJb6SfowkpTYnmADl&show_text=true&width=500).
   * Edwin Diday (2 March 1940 - 29 April 2023). Facebook [pics](https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fvladimir.batagelj%2Fposts%2Fpfbid0kuf4RUwBXiVS6C4vHGcYcVXfYoRPkwKeCbovg9kjr2u7WxwCDuWNifuPHESrRsgbl&show_text=true&width=500).
   * [NTTS23](https://ec.europa.eu/eurostat/cros/content/NTTS2023),
-6 - 10 March 2023 (Bruxelles, Belgium). Facebook [pics1](https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fvladimir.batagelj%2Fposts%2Fpfbid02JyivMKadX8tfH64h6sMAgZsqiWwkzZbG6K6FCaAQhAZsjdgBh93mQYaVVJSpnNrbl&show_text=true&width=500).
+6 - 10 March 2023 (Bruxelles, Belgium). Facebook [pics](https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fvladimir.batagelj%2Fposts%2Fpfbid02JyivMKadX8tfH64h6sMAgZsqiWwkzZbG6K6FCaAQhAZsjdgBh93mQYaVVJSpnNrbl&show_text=true&width=500).
 
 
 
