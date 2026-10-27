@@ -16,3 +16,5 @@ Symbolic data analysis
 https://github.com/bavla/symData
 
 https://github.com/bavla/Bikes
+
+http://vladowiki.fmf.uni-lj.si/doku.php?id=sda
