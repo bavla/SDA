@@ -9,6 +9,9 @@ Symbolic data analysis
   * Edwin Diday (2 March 1940 - 29 April 2023). Facebook [pics](https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fvladimir.batagelj%2Fposts%2Fpfbid0kuf4RUwBXiVS6C4vHGcYcVXfYoRPkwKeCbovg9kjr2u7WxwCDuWNifuPHESrRsgbl&show_text=true&width=500).
   * [NTTS23](https://ec.europa.eu/eurostat/cros/content/NTTS2023),
 6 - 10 March 2023 (Bruxelles, Belgium). Facebook [pics](https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fvladimir.batagelj%2Fposts%2Fpfbid02JyivMKadX8tfH64h6sMAgZsqiWwkzZbG6K6FCaAQhAZsjdgBh93mQYaVVJSpnNrbl&show_text=true&width=500).
+  * Symbolic Data Analysis Workshop, SDA 2022, 7-8 September 2022, Caserta, Italy
+second part   <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fvladimir.batagelj%2Fposts%2Fpfbid0qQT9RvXC9yXTd1LXHTzXx18m6ovZ9FAY6NypDcwCYMWd9axDeLerx6qJZqr9ohm9l&show_text=true&width=500" width="500" height="606" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+  <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fvladimir.batagelj%2Fposts%2Fpfbid038NDQq6dmdxuM1J8jEZHf1F3JvGAHcLqevkGh57F35JRDw1JpHa5fjUyHis8VMJ1ql&show_text=true&width=500" width="500" height="683" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
 
 
 
